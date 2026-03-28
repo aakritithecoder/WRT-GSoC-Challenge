@@ -23,9 +23,26 @@ Created 90 hours of synthetic weather data with all 11 required variables:
 ### 3. Configuration
 Full config.json with genetic algorithm, direct power method, and 7 intermediate waypoints.
 
-### 4. Unit Test
-Implemented test_routing_problem.py testing RoutingProblem.get_power:
-- 1 passed in 6.29s
+### 4. Unit Tests
+Implemented test_routing_problem.py with 11 passing tests across 2 test classes:
+
+**TestGetPower (8 tests):**
+- test_fuel_is_positive
+- test_fuel_has_mass_units
+- test_fuel_rate_positive_per_segment
+- test_speed_matches_input
+- test_wind_resistance_non_negative
+- test_wave_height_reflects_weather_data
+- test_determinism
+- test_number_of_segments
+
+**TestCrossoverSafetyGuards (3 tests):**
+- test_two_point_crossover_short_route_returns_parents
+- test_single_point_crossover_short_route_returns_parents
+- test_two_point_crossover_valid_route_does_not_crash
+`
+11 passed in 7.16s
+`
 
 ### 5. Route Output
 Generated output/min_fuel_route.json:
@@ -52,5 +69,5 @@ Generated output/min_fuel_route.json:
 - config.json - WRT configuration
 - generate_90h_weather.py - synthetic weather data generator
 - convert_csv_to_nc.py - CSV to NetCDF converter
-- test_routing_problem.py - unit test for RoutingProblem.get_power
+- test_routing_problem.py - 11 passing unit tests
 - min_fuel_route.json - generated route output
